@@ -1,0 +1,11 @@
+---
+- hosts: 10.10.70.102
+  vars:
+    - python_dir: /home/eyou/Desktop/Python-3.8.5/
+  tasks:
+    - name: ./configure python3
+      command: ./configure --prefix=/usr/local/python3Dir chdir={{ python_dir }}
+    - name: make python3
+      command: make chdir={{ python_dir }}
+    - name: make install python3
+      command: make install chdir={{ python_dir }}
