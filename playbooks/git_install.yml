@@ -1,0 +1,12 @@
+---
+- hosts: 10.10.75.53
+  vars:
+    - git_dir: /home/dowang/git-2.26.2
+    - gitlfs_dir: /home/dowang/rpm6
+  tasks:
+    - name: ./configure git
+      command: ./configure chdir={{ git_dir }}
+    - name: make git
+      command: make chdir={{ git_dir }}
+    - name: make install git
+      command: make install chdir={{ git_dir }}
